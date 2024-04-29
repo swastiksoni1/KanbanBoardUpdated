@@ -1,0 +1,26 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+
+<div class="container">
+  <p>Fill boards details here </p>
+    
+  
+    <form class="form"  [formGroup]="boardForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Board ID</mat-label>
+        <input type="text" matInput formControlName="kanbanBoardId">
+        <mat-error *ngIf="boardForm.get('kanbanBoardId').hasError('required')">Board ID is required</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Kanban Board Name</mat-label>
+        <input type="text" matInput formControlName="boardName">
+        <mat-error *ngIf="boardForm.get('boardName').hasError('required')">Kanban Board Name is required</mat-error>
+      </mat-form-field>
+    
+      <div>
+        <button class="submit" mat-raised-button type="submit" color="primary">Submit</button>
+      </div>
+    </form>
+  </div>

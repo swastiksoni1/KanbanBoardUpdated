@@ -1,0 +1,34 @@
+
+
+<div class="card-container hero">
+  <div class="firstCard">
+    <mat-card *ngIf="kanbanBoardList; else loading" class="cardd"  >
+      <mat-card *ngFor="let board of kanbanBoardList" class="projectList boxshadow">
+        <mat-card-content  class="projectList"  >
+          <div class="projectList"   id="list">
+            <div (click)="sendData(board?.kanbanBoardId)"  routerLink="team" class="projectButton">
+               {{ board?.boardName }}
+            </div>
+            <!-- <button class="" mat-raised-button   >delete</button> -->
+            <span style="--clr:red" class="material-symbols-outlined button1" (click)="deleteBoard(board.kanbanBoardId)">
+              delete
+              </span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-card>
+  
+    <ng-template #loading>
+      
+          <p style="    margin-top: 292px;
+          margin-left: 390px;
+          font-size: 40px;
+          font-family: cursive;">Create Board By Clicking on above Button</p>
+       
+    </ng-template>
+  </div>
+  
+</div>
+
+<button class="new_board" mat-raised-button color="primary" (click)="openDialog()" (click)="toggleFormVisibility()">Create a new board</button>
+

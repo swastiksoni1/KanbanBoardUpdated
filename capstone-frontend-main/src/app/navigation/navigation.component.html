@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  [attr.role]="'navigation'" [mode]="'side'" [opened]="false">
+    <!-- <mat-toolbar>Menu</mat-toolbar> -->
+    <mat-nav-list>
+      <a mat-list-item *ngIf ="!isloggedIn()"  routerLink="login">login</a>
+      <a mat-list-item *ngIf="notLogin" (click)="logout()">logout</a>
+      <!-- <a mat-list-item href="#">Link 3</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="mat-h1 kanban" routerLink=""><img src="../../assets/kanban-board-high-resolution-logo-white-transparent.png" alt="Logo" height="30px" width="180px" > 
+        </span>
+        <div style="text-align: center; justify-content: center;margin-left: 450px;" *ngIf="currentUser">
+          <p>Welcome, {{ currentUser }}!</p>
+        </div>
+        <!-- <div style="margin-left: 150px;margin-left: 450px;" *ngIf="!currentUser">
+          <p>No user logged in.</p>
+        </div> -->
+      <img id="m" src="../../assets/facebook.png" height="30px" width="30px" alt="facebook">
+      <img id="n" src="../../assets/instagram.png" height="30px" width="30px" alt="instagram">
+      <img id="o" src="../../assets/twitter.png" height="30px" width="30px" alt="twitter">
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

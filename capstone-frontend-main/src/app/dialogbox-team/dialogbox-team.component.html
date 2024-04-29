@@ -1,0 +1,29 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+
+<div class="container">
+  <p>Enter team member details here </p>
+
+
+  <form class="form" [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+  
+
+    <mat-form-field>
+      <mat-label>Member Email ID</mat-label>
+      <input type="email" matInput formControlName="memberEmailId">
+      <mat-error *ngIf="memberForm.get('memberEmailId').hasError('required')">Member Email ID is required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input type="text" matInput formControlName="name">
+      <mat-error *ngIf="memberForm.get('name').hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+  
+    <div>
+        <button class="submit"  mat-raised-button type="submit" color="primary">Submit</button>
+    </div>
+  </form>
+  
+</div>

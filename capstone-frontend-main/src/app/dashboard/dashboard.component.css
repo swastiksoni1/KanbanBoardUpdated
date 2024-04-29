@@ -1,0 +1,59 @@
+.container{
+  background: linear-gradient(90deg,#8CA6DB, #B993D6);
+
+}
+
+img{
+  height: 600px;
+  width: 650px;
+  
+}
+
+.kanban-section {
+  background: linear-gradient(90deg,#8CA6DB, #B993D6);
+
+  padding: 50px;
+  text-align: center;
+  max-width: 500px;
+  margin-left: 770px;
+  margin-top: -450px;
+}
+
+.kanban-content {
+  max-width: 1000px;
+  max-height: 800px;
+  margin: 0 auto;
+}
+
+.kanban-content h1 {
+  color: #f1f5f8; /* Set your desired text color */
+}
+
+.kanban-content p {
+  color: #f7f3f3; /* Set your desired text color */
+}
+
+
+/* Add this CSS to your landing page styles or in your global styles file */
+
+.registration-section {
+  background: linear-gradient(90deg,#8CA6DB, #B993D6);
+
+  color: #ffffff; /* Set your desired text color */
+  padding: 50px;
+  /* text-align: center; */
+  margin-left: 770px;
+  max-width: 500px;
+  /* margin-top: -100px; */
+  
+}
+
+.registration-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.button1 {
+  margin-top: 20px;
+  margin-right: 10px;
+}

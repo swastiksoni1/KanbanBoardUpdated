@@ -1,0 +1,82 @@
+<!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>User ID</mat-label>
+      <input matInput type="text" [(ngModel)]="userId" formControlName="userId" />
+      <mat-error *ngIf="registerForm.get('userId')?.hasError('required') && registerForm.get('userId')?.touched">
+        User ID is required
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="password" formControlName="password" />
+      <mat-error *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched">
+        Password must be at least 6 characters long
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>User Name</mat-label>
+      <input matInput type="text" [(ngModel)]="userName" formControlName="userName" />
+      <mat-error *ngIf="registerForm.get('userName')?.hasError('required') && registerForm.get('userName')?.touched">
+        User Name is required
+      </mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+
+    <button mat-raised-button color="primary" type="submit" routerLink="/login">Login</button>
+  </form> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<div class="body">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="container">
+    <div class="window">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class='welcome'>Hello There!</div>
+        <div class='subtitle'>We're almost done. Before using our services you need to create an account.</div>
+        <div class="bold-line"></div>
+  
+        <mat-form-field class="input-fields">
+          <mat-label>User ID <i id="icon1" class="fa-regular fa-user fa-flip"></i>  </mat-label>
+          <input matInput type="text" [(ngModel)]="userId" formControlName="userId" >
+          <mat-error *ngIf="registerForm.get('userId')?.hasError('required') && registerForm.get('userId')?.touched">
+            User ID is required
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="input-fields">
+          <mat-label>Password <i id="icon"   class="fa-solid fa-lock fa-flip"></i> </mat-label>
+          <input matInput type="password" [(ngModel)]="password" formControlName="password" />
+          <mat-error *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched">
+            Password must be at least 6 characters long
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="input-fields">
+          <mat-label>User Name <i  id="icon2" class="fa-solid fa-person fa-flip"></i> </mat-label>
+          <input matInput type="text" [(ngModel)]="userName" formControlName="userName" />
+          <mat-error *ngIf="registerForm.get('userName')?.hasError('required') && registerForm.get('userName')?.touched">
+            User Name is required
+          </mat-error>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid" class="ghost-round full-width">
+          Register
+        </button>
+  
+        <button mat-raised-button color="primary" type="button" routerLink="/login" class="ghost-round full-width">
+          Login
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

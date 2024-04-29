@@ -1,0 +1,38 @@
+<div class="card-container hero"> 
+
+  <div class="firstCard">
+    <mat-card *ngIf="teamMemberList; else loading" class="cardd">
+      <mat-card  *ngFor="let team of teamMemberList" class="projectList boxshadow" >
+      <mat-card-content class="projectList">
+        <div class="projectList"   id="list">
+          <div (click)="sendData(team?.memberEmailId)"  routerLink="task" class="projectButton">
+             {{ team?.name }}
+          </div>
+          <!-- <button class="button1" >delete</button> -->
+          <span style="--clr:red" class="material-symbols-outlined button1" (click)="deleteMember(team?.memberEmailId)">
+            delete
+            </span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    </mat-card>
+    
+  
+    <ng-template #loading>
+      <p style="    margin-top: -28px;
+      margin-left: 469px;
+          font-size: 40px;
+          font-family: cursive;">Add a Team Member to continue</p>
+    </ng-template>
+  </div>
+ 
+
+</div>
+
+
+ 
+
+  <button class="button" mat-raised-button color="primary"(click)="openDialog()" (click)="toggleFormVisibility()">Add team member</button>
+
+
+

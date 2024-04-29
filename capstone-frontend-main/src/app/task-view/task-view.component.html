@@ -1,0 +1,162 @@
+<div class="hero">
+  <div style="margin-left: 15px;" cdkDropListGroup>
+  <div class="example-container">
+    <h2 class="header">To do</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="to_do"
+      class="example-list"
+      (cdkDropListDropped)="onDrop($event, 'TO_DO' , draggedTaskId )">
+      <span style="margin-left: 5px; margin-bottom: 5px;"><span class="material-symbols-outlined" (click)="openDialog()">
+        add_task 
+        </span>Create task Here!!</span>
+      <div class="example-box" *ngFor="let task of taskList"  cdkDrag (cdkDragEnded)="setDraggedTaskId(task.taskId)">
+        <!-- <ng-container *ng-if="task === null">
+          
+        </ng-container> -->
+        <ng-container *ngIf="task.taskStatus === 'TO_DO'">
+          <div class="projectButton">
+          {{task?.taskName}}
+          </div>
+          <div class="projectButton">
+            {{task?.priority}}
+            </div>
+          <span class="material-symbols-outlined" (click)="deleteTask(task.taskId)">
+            delete
+            </span>
+          
+            <span class="material-symbols-outlined" (click)="openDialogUpdate(task.taskId)">
+              edit_note
+              </span>
+      </ng-container>
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2 class="header">Research</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="research"
+      class="example-list"
+      (cdkDropListDropped)="onDrop($event, 'RESEARCH', draggedTaskId )">
+      <div class="example-box" *ngFor="let task of taskList" cdkDrag (cdkDragEnded)="setDraggedTaskId(task.taskId)">
+      
+        <ng-container *ngIf="task.taskStatus === 'RESEARCH'">
+          <div class="projectButton">
+          {{task?.taskName}}
+          </div>
+          <div class="projectButton">
+            {{task?.taskDescription}}
+            </div>
+            <div class="projectButton">
+              {{task?.priority}}
+              </div>
+          <span class="material-symbols-outlined" (click)="deleteTask(task.taskId)">
+            delete
+            </span>
+            <span class="material-symbols-outlined" (click)="openDialogUpdate(task.taskId)">
+              edit_note
+              </span>
+        </ng-container>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2 class="header">In Progress</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="inProgress"
+      class="example-list"
+      (cdkDropListDropped)="onDrop($event, 'IN_PROGRESS', draggedTaskId )">
+      <div class="example-box" *ngFor="let task of taskList" cdkDrag (cdkDragEnded)="setDraggedTaskId(task.taskId)">
+      
+        <ng-container *ngIf="task.taskStatus === 'IN_PROGRESS'">
+          <div class="projectButton">
+          {{task?.taskName}}
+          </div>
+          <div class="projectButton">
+            {{task?.taskDescription}}
+            </div>
+            <div class="projectButton">
+              {{task?.priority}}
+              </div>
+          <span class="material-symbols-outlined" (click)="deleteTask(task.taskId)">
+            delete
+            </span>
+            <span class="material-symbols-outlined" (click)="openDialogUpdate(task.taskId)">
+              edit_note
+              </span>
+        </ng-container>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2 class="header">Review</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="review"
+      class="example-list"
+      (cdkDropListDropped)="onDrop($event, 'REVIEW', draggedTaskId )">
+      <div class="example-box" *ngFor="let task of taskList" cdkDrag (cdkDragEnded)="setDraggedTaskId(task.taskId)">
+      
+        <ng-container *ngIf="task.taskStatus === 'REVIEW'">
+          <div class="projectButton">
+          {{task?.taskName}}
+          </div>
+          <div class="projectButton">
+            {{task?.taskDescription}}
+            </div>
+            <div class="projectButton">
+              {{task?.priority}}
+              </div>
+          <span class="material-symbols-outlined" (click)="deleteTask(task.taskId)">
+            delete
+            </span>
+            <span class="material-symbols-outlined" (click)="openDialogUpdate(task.taskId)">
+              edit_note
+              </span>
+        </ng-container>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2 class="header">Complete</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="complete"
+      class="example-list"
+      (cdkDropListDropped)="onDrop($event, 'COMPLETE', draggedTaskId )">
+      <div class="example-box" *ngFor="let task of taskList" cdkDrag (cdkDragEnded)="setDraggedTaskId(task.taskId)">
+      
+        <ng-container *ngIf="task.taskStatus === 'COMPLETE'">
+          <div class="projectButton">
+          {{task?.taskName}}
+          </div>
+          <span class="material-symbols-outlined" (click)="deleteTask(task.taskId)">
+            delete
+            </span>
+           
+          
+        </ng-container>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+</div>
+ 
+
+  

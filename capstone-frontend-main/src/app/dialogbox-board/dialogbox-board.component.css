@@ -1,0 +1,19 @@
+.container{
+    text-align: center;
+    justify-content: center;
+    margin-top: 40px;
+    
+}
+.close-button{
+    float: right;
+    top: 2px;
+    right: 4px;
+  }
+  
+  .close-icon {
+    transition: 1s ease-in-out;
+  }
+  
+  .close-icon:hover {
+    transform: rotate(180deg);
+  }

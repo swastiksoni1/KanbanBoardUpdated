@@ -1,0 +1,58 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>User ID</mat-label>
+      <input matInput type="text" formControlName="userId" />
+      <mat-error *ngIf="loginForm.get('user_Id')?.hasError('required') && loginForm.get('userId')?.touched">
+        User ID is required
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" />
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container">
+    <div class="screen">
+        <div class="screen__content">
+            <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="login__field">
+                  <mat-label>User ID  <i id="icon1" class="fa-regular fa-user fa-flip"></i> </mat-label>
+                 
+                    <!-- <mat-icon class="login__icon" fontIcon="fa-user"> </mat-icon> -->
+                    <input matInput type="text" formControlName="userId"  class="login__input" placeholder="User name" >
+                    <mat-error *ngIf="loginForm.get('user_Id')?.hasError('required') && loginForm.get('userId')?.touched">
+                      User ID is required
+                    </mat-error>
+                  </mat-form-field>
+                <mat-form-field class="login__field">
+                  <mat-label>Password  <i id="icon"   class="fa-solid fa-lock fa-flip"></i>   </mat-label>
+                    <!-- <i class="login__icon fas fa-lock"></i> -->
+                    <input matInput type="password" formControlName="password"  class="login__input" placeholder="Password" >
+                    <mat-error *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+                      Password is required
+                    </mat-error>
+                  </mat-form-field>
+                <button type="submit" class="button login__submit" [disabled]="loginForm.invalid">
+                    <span class="button__text">Log In Now  </span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                </button>
+            </form>
+        </div>
+        <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+        </div>
+    </div>
+</div>
+  
+<!-- <app-register></app-register> -->

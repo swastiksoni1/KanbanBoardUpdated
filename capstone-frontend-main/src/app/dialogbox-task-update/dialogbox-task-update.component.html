@@ -1,0 +1,47 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+<div class="container">
+  <p>UPDATE TASK FORM</p>
+
+ 
+    <form  [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <!-- <mat-form-field>
+          <mat-label>Task ID </mat-label>
+          <input type="text" matInput formControlName="taskId">
+          <mat-error *ngIf="taskForm.get('taskId').hasError('required')">Task ID is required</mat-error>
+        </mat-form-field> -->
+      
+        <mat-form-field>
+          <mat-label>Task Name</mat-label>
+          <input type="text" matInput formControlName="taskName">
+          <mat-error *ngIf="taskForm.get('taskName').hasError('required')">Task Name is required</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Task Description</mat-label>
+            <input type="text" matInput formControlName="taskDescription">
+            <mat-error *ngIf="taskForm.get('taskDescription').hasError('required')">Task Description is required</mat-error>
+          </mat-form-field>
+    
+          <!-- <mat-form-field>
+            <mat-label>Priority</mat-label>
+            <input type="text" matInput formControlName="priority">
+            <mat-error *ngIf="taskForm.get('priority').hasError('required')">Priority is required</mat-error>
+          </mat-form-field> -->
+    
+          <mat-form-field>
+            <mat-label>Priority</mat-label>
+            <mat-select formControlName="priority">
+              <mat-option value="low">Low</mat-option>
+              <mat-option value="high">High</mat-option>
+            </mat-select>
+            <mat-error *ngIf="taskForm.get('priority').hasError('required')">Priority is required</mat-error>
+          </mat-form-field>
+          
+      
+          <div>
+            <button class="submit"  mat-raised-button type="submit" color="primary">Submit</button>
+        </div>
+      </form>
+</div>

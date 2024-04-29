@@ -1,0 +1,42 @@
+<!-- Add this section to your landing page HTML file -->
+<div class="container">
+
+  <div>
+  
+    <img src="https://i.pinimg.com/originals/f7/4e/6e/f74e6eb46b086996c21b527f9afc1828.png">
+  
+  </div>
+  
+  
+  <div class="section">
+  <section class="kanban-section">
+    <div class="kanban-content">
+      <h1>Welcome to Kanban</h1>
+      <p>
+        Kanban method offers a simple and effective way to manage your tasks and projects. It is based on two rules:
+        visualization of workflow and limitation of the number of tasks being in progress at a time. By following these two
+        principles, you save time which you'd normally spend on getting organized, and can perform your tasks much quicker.
+      </p>
+  
+      
+    </div>
+  </section>
+  
+  
+  <!-- Add this section to your landing page HTML file -->
+  
+  <section class="registration-section">
+    <div class="registration-content">
+      <p>
+        Click on the buttons below to either register as a new user or login if you are an existing user.
+      </p>
+      <button class="button1" mat-raised-button color="primary" routerLink="/register">Register</button>
+      <button class="button1" mat-raised-button color="accent" routerLink="/login">Login</button>
+      <p *ngIf="!existingUser">If you are a new user, click on 'Register'.</p>
+      <p *ngIf="existingUser">If you are an existing user, click on 'Login'.</p>
+    </div>
+  </section>
+  
+  </div>
+  
+  </div>

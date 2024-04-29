@@ -1,0 +1,33 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.kanban{
+  cursor: pointer;
+}
+
+#m{
+  margin-left: auto;
+}
+
+#n{
+ margin-left: 50px;
+}
+
+#o{
+ margin-left: 50px;
+}
